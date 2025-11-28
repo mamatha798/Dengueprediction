@@ -77,10 +77,6 @@
         }
     </style>
 </head>
-<body>
-
-    <h1>Dengue Prediction Website</h1>
-    <p>Click the button below to open the Dengue Prediction App:</p>
 
     <!-- Predict Button with your Streamlit link -->
     <button class="predict-button" onclick="window.open('http://dengue-ml-app-chiclm22snpuvd7pypxazs.streamlit.app','_blank'); highlightBox();">
@@ -104,110 +100,6 @@
 
 </body>
 </html>
-[2:33 am, 28/11/2025] Mamatha: <!DOCTYPE html>
-<html>
-<head>
-    <title>Dengue Prediction Website</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #FFE0B2, #FFCCBC);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
 
-        h1 {
-            color: #D84315;
-            font-size: 48px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 5px #FFAB91;
-        }
-
-        p {
-            font-size: 20px;
-            color: #6D4C41;
-            margin-bottom: 40px;
-        }
-
-        .predict-button {
-            padding: 20px 50px;
-            font-size: 22px;
-            font-weight: bold;
-            color: white;
-            background: linear-gradient(45deg, #FF7043, #FF5722);
-            border: none;
-            border-radius: 15px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .predict-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-        }
-
-        .predict-button:active {
-            background: linear-gradient(45deg, #FF5722, #E64A19);
-            box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-            outline: none;
-        }
-
-        .highlight-box {
-            width: 300px;
-            height: 100px;
-            border-radius: 15px;
-            margin-top: 50px;
-            background: #FFE0B2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            color: #BF360C;
-            transition: all 0.5s ease;
-            opacity: 0;
-        }
-
-        .highlight-box.active {
-            opacity: 1;
-            background: linear-gradient(135deg, #FFCCBC, #FF8A65);
-            color: white;
-            transform: scale(1.1);
-        }
-    </style>
-</head>
-<body>
-
-    <h1>Dengue Prediction Website</h1>
-    <p>Click the button below to open the Dengue Prediction App:</p>
-
-    <!-- Predict Button with your Streamlit link -->
-    <button class="predict-button" onclick="window.open('http://dengue-ml-app-chiclm22snpuvd7pypxazs.streamlit.app','_blank'); highlightBox();">
-        Predict Dengue
-    </button>
-
-    <!-- Highlight Box -->
-    <div class="highlight-box" id="highlightBox">
-        Prediction Box Active!
-    </div>
-
-    <script>
-        function highlightBox() {
-            const box = document.getElementById('highlightBox');
-            box.classList.add('active');
-            setTimeout(() => {
-                box.classList.remove('active');
-            }, 2000);
-        }
-    </script>
-
-</body>
-</html>
+       
 
