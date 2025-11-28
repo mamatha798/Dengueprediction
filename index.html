@@ -48,6 +48,7 @@ p {
 }
 
 .predict-button {
+  .predict-button {
     padding: 20px 50px;
     font-size: 22px;
     font-weight: bold;
@@ -58,7 +59,10 @@ p {
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transition: all 0.3s ease;
-    margin-bottom: 30px;
+    position: relative;
+    margin-bottom: 50px;   /* REMOVE THIS HUGE GAP */
+}
+ 
 }
 .predict-button:hover {
     transform: scale(1.1);
@@ -180,3 +184,4 @@ btn.addEventListener('click', () => {
 
 </body>
 </html>
+
