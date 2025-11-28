@@ -102,4 +102,36 @@
             <p>Remove or regularly clean containers that hold water to prevent mosquito breeding, such as flower pots, buckets, and tires.</p>
         </div>
         <div class="card">
-            <img src="https://img.icons8.com/color/96/000000/mosq
+            <img src="https://img.icons8.com/color/96/000000/mosquito.png" alt="Mosquito Icon">
+            <h3>Use Mosquito Repellents</h3>
+            <p>Apply approved mosquito repellents on exposed skin, especially during early morning and evening hours when mosquitoes are active.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/color/96/000000/net.png" alt="Net Icon">
+            <h3>Use Mosquito Nets</h3>
+            <p>Sleep under mosquito nets and cover windows and doors with screens to prevent mosquito entry indoors.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/color/96/000000/clean.png" alt="Clean Icon">
+            <h3>Keep Surroundings Clean</h3>
+            <p>Maintain cleanliness in and around your home, clearing debris and garbage where mosquitoes can hide and breed.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/color/96/000000/medical-history.png" alt="Medical Icon">
+            <h3>Seek Early Medical Attention</h3>
+            <p>If you experience dengue symptoms like high fever, headache, joint pain, or rashes, consult a doctor immediately.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/color/96/000000/community.png" alt="Community Icon">
+            <h3>Community Awareness</h3>
+            <p>Participate in local dengue control programs and educate neighbors about preventive measures to reduce dengue spread.</p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 Mamatha | Official Dengue Prevention Awareness
+    </footer>
+
+</body>
+</html>
