@@ -9,23 +9,28 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #FFE0B2, #FFCCBC);
+
+            /* 🔥 OFFICIAL PROFESSIONAL MEDICAL BACKGROUND */
+            background: linear-gradient(135deg, #f6f9fc, #e9f1f8);
+            background-attachment: fixed;
+
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         h1 {
-            color: #D84315;
+            color: #0d3b66;
             font-size: 48px;
             text-align: center;
             margin-top: 40px;
             margin-bottom: 10px;
+            font-weight: 700;
         }
 
         p {
             font-size: 20px;
-            color: #6D4C41;
+            color: #3e4a56;
             text-align: center;
             margin: 5px 0 20px 0;
         }
@@ -36,130 +41,15 @@
             font-size: 22px;
             font-weight: bold;
             color: white;
-            background: linear-gradient(45deg, #FF7043, #FF5722);
+            background: linear-gradient(45deg, #0056b3, #007bff);
             border: none;
-            border-radius: 15px;
+            border-radius: 12px;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
             transition: 0.3s ease;
             margin-bottom: 25px;
         }
         .predict-button:hover {
-            transform: scale(1.1);
+            transform: translateY(-3px);
+            background: linear-gradient(45deg, #004c9e, #0073f0);
         }
-
-        /* Info + Tips Buttons Group */
-        .btn-group {
-            display: flex;
-            gap: 15px;
-            margin: 10px 0 10px 0;
-            justify-content: center;
-        }
-
-        .info-btn {
-            padding: 12px 25px;
-            background: #28a745;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 18px;
-            transition: 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-        .info-btn:hover {
-            background: #1e7e34;
-            transform: scale(1.05);
-        }
-
-        /* Quote Card */
-        .quote-box {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-            padding: 18px;
-            border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-            margin: 10px auto 20px auto;
-            max-width: 450px;
-            text-align: center;
-            font-style: italic;
-            font-size: 18px;
-            color: #6f42c1;
-        }
-
-        /* About Section */
-        .info-section {
-            background-color: #FFECB3;
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            max-width: 800px;
-            margin: 20px auto 30px auto;
-            text-align: left;
-        }
-
-        .info-section h2 {
-            text-align: center;
-            color: #BF360C;
-            margin-bottom: 15px;
-        }
-
-        .info-section p {
-            text-align: left;
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #5D4037;
-        }
-
-        /* Footer */
-        footer {
-            font-size: 16px;
-            color: #6D4C41;
-            margin-bottom: 30px;
-        }
-
-    </style>
-</head>
-
-<body>
-
-    <h1>Dengue Prediction Website</h1>
-    <p>Click the button below to open the Dengue Prediction App:</p>
-
-    <!-- Predict Button -->
-    <button class="predict-button" id="predictBtn">Predict Dengue</button>
-
-    <!-- Quote Card -->
-    <div class="quote-box">
-        <span style="font-size:24px;">💉</span><br>
-        <strong>“Early prediction can save lives!”</strong><br>
-        Learn more about dengue and protect yourself.
-    </div>
-
-    <!-- Buttons Group (Perfectly aligned, no gaps) -->
-    <div class="btn-group">
-        <button class="info-btn" onclick="window.location.href='information.html'">More Info About Dengue</button>
-        <button class="info-btn" onclick="window.location.href='tips.html'">Dengue Prevention Tips</button>
-    </div>
-
-    <!-- About Section (NO GAP ABOVE NOW) -->
-    <div class="info-section">
-        <h2>About the App</h2>
-        <p><strong>Why Dengue Prediction App:</strong> This app predicts dengue outbreaks and risk levels in real time, helping with awareness and prevention.</p>
-
-        <p><strong>Technologies Used:</strong> Python, Streamlit, and machine learning libraries.</p>
-
-        <p><strong>Created By:</strong> Mamatha</p>
-    </div>
-
-    <footer>
-        &copy; 2025 Mamatha. All rights reserved.
-    </footer>
-
-    <script>
-        document.getElementById('predictBtn').addEventListener('click', () => {
-            window.open('https://dengue-ml-app-chiclm22snpuvd7pypxazs.streamlit.app', '_blank');
-        });
-    </script>
-
-</body>
-</html>
