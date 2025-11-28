@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Dengue Prediction Website</title>
+
     <style>
 
 .info-btn {
@@ -36,19 +37,16 @@ body {
 h1 {
     color: #D84315;
     font-size: 48px;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 5px #FFAB91;
+    margin-bottom: 15px;
 }
 
 p {
     font-size: 20px;
     color: #6D4C41;
-    margin-bottom: 30px;
-    max-width: 700px;
+    margin-bottom: 15px;
 }
 
 .predict-button {
-  .predict-button {
     padding: 20px 50px;
     font-size: 22px;
     font-weight: bold;
@@ -59,21 +57,16 @@ p {
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transition: all 0.3s ease;
-    position: relative;
-    margin-bottom: 50px;   /* REMOVE THIS HUGE GAP */
-}
- 
+    margin-bottom: 20px; /* FIXED: reduced space */
 }
 .predict-button:hover {
     transform: scale(1.1);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
 .highlight-box {
     width: 300px;
     height: 100px;
     border-radius: 15px;
-    margin-bottom: 50px;
     background: #FFE0B2;
     display: flex;
     justify-content: center;
@@ -82,6 +75,7 @@ p {
     color: #BF360C;
     transition: all 0.5s ease;
     opacity: 0;
+    margin-bottom: 15px; /* reduced */
 }
 .highlight-box.active {
     opacity: 1;
@@ -90,28 +84,31 @@ p {
     transform: scale(1.1);
 }
 
+.btn-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px; /* small gap only */
+    justify-content: center;
+}
+
 .info-section {
     background-color: #FFECB3;
-    padding: 30px;
+    padding: 25px;
     border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     max-width: 800px;
-    margin-bottom: 50px;
+    margin-top: 10px;  /* FIXED: removed big space */
+    margin-bottom: 20px; /* FIXED */
 }
+
 .info-section h2 {
     color: #BF360C;
-    margin-bottom: 15px;
-}
-.info-section p {
-    font-size: 18px;
-    color: #5D4037;
-    text-align: left;
 }
 
 footer {
     font-size: 16px;
     color: #6D4C41;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
     </style>
@@ -125,43 +122,41 @@ footer {
 <!-- Predict Button -->
 <button class="predict-button" id="predictBtn">Predict Dengue</button>
 
-<!-- Stylish Quote Card -->
+<!-- Quote Card -->
 <div style="
     background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-    padding: 20px 25px;
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    margin: 20px auto;
+    margin: 15px auto;
     max-width: 450px;
-    text-align: center;
     font-style: italic;
     font-size: 18px;
     color: #6f42c1;">
-    
     <span style="font-size:24px; display:block; margin-bottom:10px;">💉</span>
     <strong>“Early prediction can save lives!”</strong><br>
     Learn more about dengue and protect yourself.
 </div>
 
-<!-- Buttons Section -->
-<button class="info-btn" onclick="window.location.href='information.html'">More Info About Dengue</button>
-<br><br>
+<!-- Button Group (No gaps now) -->
+<div class="btn-group">
+    <button class="info-btn" onclick="window.location.href='information.html'">More Info About Dengue</button>
+    <button class="info-btn" onclick="window.location.href='tips.html'">Dengue Prevention Tips</button>
+</div>
 
-<button class="info-btn" onclick="window.location.href='tips.html'">Dengue Prevention Tips</button>
-
-<!-- Small Tips Text -->
-<p style="margin-top:20px; font-size:16px; color:#555;">
+<!-- Tips text -->
+<p style="font-size:16px; color:#555;">
     Tips: Use mosquito repellent, remove stagnant water, and stay safe!
 </p>
 
-<!-- Highlight Box -->
+<!-- Animation box -->
 <div class="highlight-box" id="highlightBox">Prediction Box Active!</div>
 
-<!-- Info Section -->
+<!-- About Section (gap fixed) -->
 <div class="info-section">
     <h2>About the App</h2>
-    <p><strong>Why Dengue Prediction App:</strong> This app predicts dengue outbreaks and risk levels in real time to support awareness and prevention.</p>
-    <p><strong>Technologies Used:</strong> Built with <strong>Python</strong>, <strong>Streamlit</strong>, and machine learning libraries.</p>
+    <p><strong>Why Dengue Prediction App:</strong> This app predicts dengue outbreaks and risk levels in real time.</p>
+    <p><strong>Technologies Used:</strong> Python, Streamlit, and machine learning libraries.</p>
     <p><strong>Created By:</strong> Mamatha</p>
 </div>
 
@@ -184,4 +179,3 @@ btn.addEventListener('click', () => {
 
 </body>
 </html>
-
