@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dengue Prevention Tips</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* ----- RESET & GENERAL ----- */
+        * {box-sizing: border-box; margin: 0; padding: 0;}
+        body {font-family: 'Segoe UI', Arial, sans-serif; background: #f5f7fa; color: #333;}
+        a {text-decoration: none; color: inherit;}
+
+        /* ----- NAVBAR ----- */
+        nav {
+            width: 100%;
+            background-color: #0d3b66;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .logo {color: white; font-size: 24px; font-weight: bold;}
+        nav ul {list-style: none; display: flex; gap: 25px;}
+        nav ul li a {color: white; font-size: 16px; padding: 6px 10px; transition: 0.3s;}
+        nav ul li a:hover {background: rgba(255,255,255,0.2); border-radius: 5px;}
+
+        /* ----- HEADER BANNER ----- */
+        header {
+            text-align: center;
+            padding: 50px 20px 20px 20px;
+            background: linear-gradient(135deg, #0d3b66, #1e5799);
+            color: white;
+            width: 100%;
+        }
+        header h1 {font-size: 42px; margin-bottom: 10px;}
+        header p {font-size: 20px;}
+
+        /* ----- CARD SECTIONS ----- */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            margin: 30px 10px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .card:hover {transform: translateY(-5px); box-shadow: 0 6px 18px rgba(0,0,0,0.2);}
+        .card img {width: 60px; margin-bottom: 15px;}
+        .card h3 {color: #0d3b66; margin-bottom: 10px;}
+        .card p {font-size: 16px; line-height: 1.6; color: #555;}
+
+        /* ----- FOOTER ----- */
+        footer {
+            background: #0d3b66;
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 16px;
+            margin-top: 40px;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media(max-width:768px){.card-container{flex-direction:column;align-items:center;}}
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">Dengue Prediction</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="information.html">Information</a></li>
+            <li><a href="tips.html">Prevention Tips</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADER BANNER -->
+    <header>
+        <h1>Dengue Prevention Tips</h1>
+        <p>Follow these measures to protect yourself and your community from dengue fever.</p>
+    </header>
+
+    <!-- TIPS CARDS -->
+    <div class="card-container">
+        <div class="card">
+            <img src="https://img.icons8.com/color/96/000000/water.png" alt="Water Icon">
+            <h3>Eliminate Stagnant Water</h3>
+            <p>Remove or regularly clean containers that hold water to prevent mosquito breeding, such as flower pots, buckets, and tires.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/color/96/000000/mosq
