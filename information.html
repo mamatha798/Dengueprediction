@@ -4,85 +4,134 @@
     <title>Dengue Information</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #fff0f6;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #fdf2f8;
             padding: 40px;
-            line-height: 1.6;
-            text-align: center;
+            margin: 0;
         }
+
         .container {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            max-width: 800px;
+            background: #ffffff;
+            max-width: 900px;
             margin: auto;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.15);
         }
-        h1 { 
-            color: #d63384; 
-            margin-bottom: 20px;
+
+        h1 {
+            text-align: center;
+            color: #d63384;
+            font-size: 36px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
-        p {
+
+        h2 {
+            color: #a61e4d;
+            font-size: 26px;
+            margin-top: 30px;
+            border-left: 5px solid #d63384;
+            padding-left: 10px;
+        }
+
+        p, li {
             font-size: 18px;
             color: #333;
-            margin-bottom: 15px;
+            line-height: 1.7;
+            text-align: justify;
         }
+
+        ul {
+            margin-left: 20px;
+        }
+
         .back-btn {
-            padding: 12px 25px;
+            display: block;
+            margin: 40px auto 0;
+            padding: 14px 40px;
             background: #6f42c1;
+            font-size: 20px;
             color: white;
-            border-radius: 8px;
             border: none;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 18px;
-            margin-top: 20px;
             transition: 0.3s;
         }
+
         .back-btn:hover {
             background: #563d7c;
             transform: scale(1.05);
         }
+
+        /* Highlight Box */
+        .info-box {
+            background: #fff5fa;
+            border-left: 6px solid #d63384;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>About Dengue</h1>
-        <p>Dengue is a mosquito-borne viral disease affecting millions of people worldwide
-            Dengue fever is a mosquito-borne viral infection common in tropical and subtrop
-            ical regions, causing symptoms like high fever, severe headache, and pain behind the eyes.
-            It can also lead to muscle and joint pain, nausea, vomiting, and a rash. Most cases are mild,
-            but some can develop into severe dengue, which is a medical emergency that can be fatal if untreated.
-            There is no specific treatment for the mild form, but severe cases require immediate hospitalization.  
-            Symptoms::
-1.Fever: Abrupt onset of high fever. 
-2.Headache: Severe headache, often with pain behind the eyes that worsens with eye movement. 
-3.Pain: Severe muscle and joint pain, earning it the nickname "break-bone fever". 
-4.Rash: A measles-like rash that appears on the chest and upper limbs. 
-5.Other symptoms: Nausea, vomiting, loss of appetite, fatigue, and swollen glands. 
 
-     Severe dengue ::
-Warning signs: Some people with dengue develop severe dengue, which can lead to severe bleeding, low blood pressure, and organ failure. 
-Symptoms of severe dengue: Severe abdominal pain, persistent vomiting, rapid breathing, bleeding gums or nose, and vomiting blood. 
-Medical emergency: Seek immediate medical attention if you experience warning signs of severe dengue.        
-            
-           Prevention::
-Mosquito protection: Use insect repellent, wear long sleeves and pants, and sleep under mosquito nets. 
-Eliminate breeding grounds: Remove standing water around your home where mosquitoes can breed. 
-Stay informed: Dengue is prevalent in tropical and subtropical areas; check health advisories if you are traveling. 
- 
-     Treatment::
-Mild dengue: Supportive care such as rest, fluids, and pain relievers like acetaminophen can be used.
-            Avoid aspirin and ibuprofen as they can increase bleeding risk.
-Severe dengue: A medical emergency requiring immediate hospital care with IV fluids,
-            oxygen support, and blood pressure management.        
-            
-            
-            .</p>
-        <p>This app helps predict dengue risk using machine learning models for early detection.</p>
-       
-        <button class="back-btn" onclick="window.location.href='index.html'">
-            ⬅ Back to Home
-        </button>
+<body>
+
+    <div class="container">
+        
+        <h1>Dengue Information</h1>
+
+        <p>
+            Dengue is a mosquito-borne viral disease commonly seen in tropical and
+            subtropical regions. It causes sudden high fever, severe body pain, headache,
+            nausea, vomiting, and skin rashes. Most cases are mild, but severe dengue
+            can become life-threatening if not treated immediately.
+        </p>
+
+        <h2>Symptoms</h2>
+        <ul>
+            <li><b>High Fever</b> – sudden onset</li>
+            <li><b>Severe Headache</b> – especially behind the eyes</li>
+            <li><b>Body Pain</b> – muscle & joint pain (“break-bone fever”)</li>
+            <li><b>Skin Rash</b></li>
+            <li><b>Nausea, Vomiting, Fatigue</b></li>
+        </ul>
+
+        <h2>Severe Dengue – Warning Signs</h2>
+        <div class="info-box">
+            <p><b>Seek immediate hospital care if you notice:</b></p>
+            <ul>
+                <li>Severe stomach pain</li>
+                <li>Continuous vomiting</li>
+                <li>Bleeding from gums or nose</li>
+                <li>Blood in vomit</li>
+                <li>Sudden drop in blood pressure</li>
+            </ul>
+        </div>
+
+        <h2>Prevention</h2>
+        <ul>
+            <li>Use mosquito repellent regularly</li>
+            <li>Wear long-sleeved clothing</li>
+            <li>Use mosquito nets while sleeping</li>
+            <li>Remove stagnant water around your house</li>
+            <li>Keep surroundings clean</li>
+        </ul>
+
+        <h2>Treatment</h2>
+        <ul>
+            <li><b>Mild Dengue:</b> Rest, hydration, paracetamol (avoid aspirin/ibuprofen)</li>
+            <li><b>Severe Dengue:</b> Requires hospital admission, IV fluids, monitoring</li>
+        </ul>
+
+        <p>
+            This app predicts dengue risk using a machine-learning model for early detection and awareness.
+        </p>
+
+        <button class="back-btn" onclick="window.location.href='index.html'">⬅ Back to Home</button>
+
     </div>
+
 </body>
 </html>
