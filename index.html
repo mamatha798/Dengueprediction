@@ -3,6 +3,25 @@
 <head>
     <title>Dengue Prediction Website</title>
     <style>
+.info-btn {
+    padding: 12px 24px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.info-btn:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+
+        
         /* Body styling */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -121,6 +140,11 @@
     <button class="predict-button" id="predictBtn">
         Predict Dengue
     </button>
+    <div class="button-container">
+    <button class="info-btn" onclick="window.location.href='information.html'">
+        More Info About Dengue
+    </button>
+</div>
 
     <!-- Highlight Box -->
     <div class="highlight-box" id="highlightBox">
@@ -158,3 +182,4 @@
 
 </body>
 </html>
+
