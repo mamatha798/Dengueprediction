@@ -1,104 +1,121 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dengue Fever Prediction</title>
-  <link href="https://dengue-ml-app-chiclm22snpuvd7pypxazs.streamlit.app/">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #f9d423, #ff4e50);
-      color: #fff;
-      text-align: center;
-    }
-    header {
-      padding: 50px 20px;
-      background: rgba(0,0,0,0.2);
-    }
-    header h1 {
-      font-size: 48px;
-      text-shadow: 2px 2px #000;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 20px;
-      margin-top: 0;
-    }
-    .card {
-      background: rgba(255,255,255,0.2);
-      margin: 30px auto;
-      padding: 30px;
-      border-radius: 20px;
-      width: 80%;
-      max-width: 800px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
-    }
-    .button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 15px 40px;
-      text-decoration: none;
-      font-size: 20px;
-      border-radius: 12px;
-      transition: 0.3s;
-      display: inline-block;
-      margin-top: 20px;
-    }
-    .button:hover {
-      background-color: #45a049;
-    }
-    img {
-      width: 100%;
-      max-width: 600px;
-      border-radius: 15px;
-      margin-top: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
-    footer {
-      margin: 40px 0;
-      font-size: 16px;
-      color: #fff;
-    }
-  </style>
+    <title>Dengue Prediction Website</title>
+    <style>
+        /* Body styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #FFE0B2, #FFCCBC);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Header */
+        h1 {
+            color: #D84315;
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px #FFAB91;
+        }
+
+        /* Paragraph */
+        p {
+            font-size: 20px;
+            color: #6D4C41;
+            margin-bottom: 40px;
+        }
+
+        /* Button styling */
+        .predict-button {
+            padding: 20px 50px;
+            font-size: 22px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(45deg, #FF7043, #FF5722);
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        /* Button hover effect */
+        .predict-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        /* Button click effect */
+        .predict-button:active {
+            background: linear-gradient(45deg, #FF5722, #E64A19);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+            outline: none;
+        }
+
+        /* Highlight box effect */
+        .highlight-box {
+            width: 300px;
+            height: 100px;
+            border-radius: 15px;
+            margin-top: 50px;
+            background: #FFE0B2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #BF360C;
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        /* Show highlight */
+        .highlight-box.active {
+            opacity: 1;
+            background: linear-gradient(135deg, #FFCCBC, #FF8A65);
+            color: white;
+            transform: scale(1.1);
+        }
+
+    </style>
 </head>
 <body>
 
-<header>
-  <h1>Dengue Fever Prediction</h1>
-  <p> Predict Dengue Cases Using Machine Learning</p>
-</header>
+    <h1>Dengue Prediction Website</h1>
+    <p>Click the button below to open the Dengue Prediction App:</p>
 
-<div class="card">
-  <h2>About the Project</h2>
-  <p>This website predicts dengue cases based on <b>temperature, humidity, and rainfall</b> using Machine Learning.</p>
-<button onclick="window.open('http://dengue-ml-app-chiclm22snpuvd7pypxazs.streamlit.app','_blank')">
- Predict Dengue
-  
-</button> 
+    <!-- Predict Button -->
+    <button class="predict-button" onclick="openStreamlit()">
+        Predict Dengue
+    </button>
 
+    <!-- Highlight Box -->
+    <div class="highlight-box" id="highlightBox">
+        Prediction Box Active!
+    </div>
 
-  
-  <h2> Graph</h2>
-  <img src="graph.png" alt="Prediction Graph">
-</div>
+    <script>
+        function openStreamlit() {
+            // Open Streamlit app in new tab
+            window.open('https://dengue-ml-app-chiclm22snpuvd7pypxazs.streamlit.app', '_blank');
 
-<footer>
-  <p>Created by: Mamatha ES, </p>
-</footer>
+            // Show highlight box animation
+            const box = document.getElementById('highlightBox');
+            box.classList.add('active');
+
+            // Remove highlight after 2 seconds
+            setTimeout(() => {
+                box.classList.remove('active');
+            }, 2000);
+        }
+    </script>
 
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
