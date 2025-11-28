@@ -5,51 +5,177 @@
 
     <style>
 
+        /* ----------- OFFICIAL MEDICAL WEBPAGE BACKGROUND ----------- */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
-
-            /* 🔥 OFFICIAL PROFESSIONAL MEDICAL BACKGROUND */
-            background: linear-gradient(135deg, #f6f9fc, #e9f1f8);
+            background: linear-gradient(to bottom right, #eef4f9, #dce7f3);
             background-attachment: fixed;
-
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
+        /* ----------- HEADER ----------- */
         h1 {
             color: #0d3b66;
-            font-size: 48px;
-            text-align: center;
+            font-size: 42px;
             margin-top: 40px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             font-weight: 700;
+            text-align: center;
         }
 
         p {
-            font-size: 20px;
+            font-size: 18px;
             color: #3e4a56;
             text-align: center;
-            margin: 5px 0 20px 0;
+            margin-top: 5px;
+            margin-bottom: 20px;
         }
 
-        /* Predict Button */
+        /* ----------- PREDICT BUTTON ----------- */
         .predict-button {
-            padding: 18px 45px;
-            font-size: 22px;
+            padding: 16px 42px;
+            font-size: 20px;
             font-weight: bold;
             color: white;
             background: linear-gradient(45deg, #0056b3, #007bff);
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-            transition: 0.3s ease;
-            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: 0.25s ease;
+            margin-bottom: 20px;
         }
         .predict-button:hover {
             transform: translateY(-3px);
-            background: linear-gradient(45deg, #004c9e, #0073f0);
+            background: linear-gradient(45deg, #004fa5, #006be0);
         }
+
+        /* ----------- QUOTE CARD ----------- */
+        .quote-box {
+            background: white;
+            border-left: 5px solid #007bff;
+            padding: 18px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin: 0 auto 20px auto;
+            max-width: 450px;
+            text-align: center;
+            font-size: 18px;
+            color: #444;
+        }
+
+        /* ----------- MORE INFO + TIPS BUTTONS ----------- */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin: 0 auto 15px auto;
+            justify-content: center;
+        }
+
+        .info-btn {
+            padding: 12px 24px;
+            background: #1e7e34;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 17px;
+            transition: 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+
+        .info-btn:hover {
+            background: #17642b;
+            transform: translateY(-2px);
+        }
+
+        /* ----------- ABOUT SECTION ----------- */
+        .info-section {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            max-width: 830px;
+            width: 90%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            border-top: 4px solid #0d6efd;
+            margin-top: 10px;
+            margin-bottom: 35px;
+        }
+
+        .info-section h2 {
+            text-align: center;
+            color: #0d3b66;
+            margin-bottom: 15px;
+            font-size: 26px;
+        }
+
+        .info-section p {
+            font-size: 18px;
+            color: #3e4a56;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        /* ----------- FOOTER ----------- */
+        footer {
+            font-size: 16px;
+            color: #3e4a56;
+            margin-bottom: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Dengue Prediction Website</h1>
+    <p>Click the button below to open the Dengue Prediction App:</p>
+
+    <!-- Predict Button -->
+    <button class="predict-button" id="predictBtn">Predict Dengue</button>
+
+    <!-- Quote Box -->
+    <div class="quote-box">
+        <span style="font-size:22px;">💉</span><br>
+        <strong>“Early prediction can save lives!”</strong><br>
+        Stay informed and protect your community.
+    </div>
+
+    <!-- Buttons Section -->
+    <div class="btn-group">
+        <button class="info-btn" onclick="window.location.href='information.html'">More Info About Dengue</button>
+        <button class="info-btn" onclick="window.location.href='tips.html'">Dengue Prevention Tips</button>
+    </div>
+
+    <!-- About the App -->
+    <div class="info-section">
+        <h2>About the App</h2>
+
+        <p><strong>Purpose:</strong>  
+        The Dengue Prediction App uses data science and machine learning to predict possible dengue outbreak levels and help in early prevention.</p>
+
+        <p><strong>Technology Used:</strong>  
+        Python, Machine Learning Models, and Streamlit Framework.</p>
+
+        <p><strong>Created By:</strong>  
+        Mamatha</p>
+    </div>
+
+    <footer>
+        © 2025 Mamatha. All rights reserved.
+    </footer>
+
+    <script>
+        document.getElementById('predictBtn').addEventListener('click', () => {
+            window.open('https://dengue-ml-app-chiclm22snpuvd7pypxazs.streamlit.app', '_blank');
+        });
+    </script>
+
+</body>
+</html>
+
