@@ -7,184 +7,111 @@
     
     <style>
         /* ----- RESET & GENERAL ----- */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(to bottom right, #eef4f9, #dce7f3);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #3e4a56;
-        }
+        * {box-sizing: border-box; margin: 0; padding: 0;}
+        body {font-family: 'Segoe UI', Arial, sans-serif; background: #f5f7fa; color: #333;}
+        a {text-decoration: none; color: inherit;}
 
         /* ----- NAVBAR ----- */
         nav {
             width: 100%;
             background-color: #0d3b66;
-            padding: 15px 30px;
+            padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
             position: sticky;
             top: 0;
             z-index: 100;
         }
+        nav .logo {color: white; font-size: 24px; font-weight: bold;}
+        nav ul {list-style: none; display: flex; gap: 25px;}
+        nav ul li a {color: white; font-size: 16px; padding: 6px 10px; transition: 0.3s;}
+        nav ul li a:hover {background: rgba(255,255,255,0.2); border-radius: 5px;}
 
-        nav h1 {
-            color: white;
-            font-size: 24px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        /* ----- HEADER ----- */
+        /* ----- HEADER BANNER ----- */
         header {
             text-align: center;
-            margin: 40px 20px 20px 20px;
+            padding: 50px 20px 20px 20px;
+            background: linear-gradient(135deg, #0d3b66, #1e5799);
+            color: white;
+            width: 100%;
         }
+        header h1 {font-size: 42px; margin-bottom: 10px;}
+        header p {font-size: 20px;}
 
-        header h2 {
-            font-size: 36px;
-            color: #0d3b66;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 18px;
-        }
-
-        /* ----- BUTTONS ----- */
-        .btn-group, .predict-container {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
-
+        /* ----- MAIN BUTTONS ----- */
+        .main-btn {margin: 30px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;}
         .predict-button, .info-btn {
-            padding: 14px 32px;
+            padding: 16px 36px;
+            font-weight: bold;
             border-radius: 8px;
             border: none;
-            font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
+        .predict-button {background: linear-gradient(45deg,#007bff,#0056b3); color: white; font-size: 20px;}
+        .predict-button:hover {transform: translateY(-3px); background: linear-gradient(45deg,#0056b3,#003d80);}
+        .info-btn {background-color: #1e7e34; color: white; font-size: 16px;}
+        .info-btn:hover {background-color: #166428; transform: translateY(-2px);}
 
-        .predict-button {
-            font-size: 20px;
-            color: white;
-            background: linear-gradient(45deg, #0056b3, #007bff);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        /* ----- CARD SECTIONS ----- */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            margin: 30px 10px;
         }
-
-        .predict-button:hover {
-            transform: translateY(-3px);
-            background: linear-gradient(45deg, #004fa5, #006be0);
-        }
-
-        .info-btn {
-            font-size: 16px;
-            color: white;
-            background-color: #1e7e34;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-        }
-
-        .info-btn:hover {
-            background-color: #166428;
-            transform: translateY(-2px);
-        }
-
-        /* ----- QUOTE CARD ----- */
-        .quote-box {
+        .card {
             background: white;
-            border-left: 6px solid #007bff;
+            border-radius: 12px;
             padding: 20px;
-            border-radius: 10px;
-            max-width: 500px;
-            text-align: center;
-            font-size: 18px;
-            margin: 20px auto;
+            width: 280px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
         }
+        .card:hover {transform: translateY(-5px); box-shadow: 0 6px 18px rgba(0,0,0,0.2);}
+        .card img {width: 60px; margin-bottom: 15px;}
+        .card h3 {color: #0d3b66; margin-bottom: 10px;}
+        .card p {font-size: 16px; line-height: 1.5; color: #555;}
 
         /* ----- ABOUT SECTION ----- */
         .info-section {
-            background-color: white;
-            padding: 25px;
-            border-radius: 12px;
+            background: white;
             max-width: 800px;
             width: 90%;
-            margin: 20px auto;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 40px auto;
             box-shadow: 0 4px 18px rgba(0,0,0,0.12);
-            border-top: 4px solid #0d6efd;
+            border-top: 4px solid #007bff;
         }
-
-        .info-section h2 {
-            color: #0d3b66;
-            text-align: center;
-            margin-bottom: 15px;
-            font-size: 28px;
-        }
-
-        .info-section p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 12px;
-        }
+        .info-section h2 {color: #0d3b66; text-align: center; margin-bottom: 15px; font-size: 28px;}
+        .info-section p {font-size: 18px; line-height: 1.6; margin-bottom: 12px;}
 
         /* ----- FOOTER ----- */
         footer {
-            width: 100%;
+            background: #0d3b66;
+            color: white;
             text-align: center;
-            padding: 20px 0;
-            color: #3e4a56;
-            background-color: #f1f3f6;
+            padding: 25px 20px;
             font-size: 16px;
             margin-top: 40px;
         }
 
         /* ----- RESPONSIVE ----- */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .predict-button, .info-btn {
-                width: 90%;
-                text-align: center;
-            }
-        }
+        @media(max-width:768px){.card-container{flex-direction:column;align-items:center;} .predict-button,.info-btn{width:90%;}}
     </style>
 </head>
 
 <body>
 
-    <!-- NAVIGATION BAR -->
+    <!-- NAVBAR -->
     <nav>
-        <h1>Dengue Prediction</h1>
+        <div class="logo">Dengue Prediction</div>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="information.html">Information</a></li>
@@ -192,28 +119,36 @@
         </ul>
     </nav>
 
-    <!-- HEADER -->
+    <!-- HEADER BANNER -->
     <header>
-        <h2>Dengue Prediction Website</h2>
-        <p>Click the button below to open the Dengue Prediction App:</p>
+        <h1>Dengue Prediction Website</h1>
+        <p>Predict dengue outbreaks, stay informed, and protect your community.</p>
     </header>
 
-    <!-- PREDICT BUTTON -->
-    <div class="predict-container">
+    <!-- MAIN BUTTONS -->
+    <div class="main-btn">
         <button class="predict-button" id="predictBtn">Predict Dengue</button>
+        <button class="info-btn" onclick="window.location.href='information.html'">More Info</button>
+        <button class="info-btn" onclick="window.location.href='tips.html'">Prevention Tips</button>
     </div>
 
-    <!-- QUOTE CARD -->
-    <div class="quote-box">
-        <span style="font-size:22px;">💉</span><br>
-        <strong>“Early prediction can save lives!”</strong><br>
-        Stay informed and protect your community.
-    </div>
-
-    <!-- BUTTONS GROUP -->
-    <div class="btn-group">
-        <button class="info-btn" onclick="window.location.href='information.html'">More Info About Dengue</button>
-        <button class="info-btn" onclick="window.location.href='tips.html'">Dengue Prevention Tips</button>
+    <!-- CARDS: FEATURES / OPTIONS -->
+    <div class="card-container">
+        <div class="card">
+            <img src="https://img.icons8.com/color/96/000000/mosquito.png" alt="Prediction Icon">
+            <h3>Dengue Prediction</h3>
+            <p>Get real-time predictions for dengue risk levels in your area using our ML-powered app.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/color/96/000000/info--v1.png" alt="Information Icon">
+            <h3>Information</h3>
+            <p>Learn about dengue, its symptoms, causes, and how to protect yourself and your family.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/color/96/000000/hand-sanitizer.png" alt="Prevention Icon">
+            <h3>Prevention Tips</h3>
+            <p>Follow practical tips to prevent dengue including mosquito control and hygiene measures.</p>
+        </div>
     </div>
 
     <!-- ABOUT SECTION -->
@@ -226,7 +161,7 @@
 
     <!-- FOOTER -->
     <footer>
-        © 2025 Mamatha. All rights reserved.
+        © 2025 Mamatha | Designed for Official Dengue Awareness
     </footer>
 
     <!-- JAVASCRIPT -->
