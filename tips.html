@@ -5,12 +5,10 @@
     <title>Dengue Prevention Tips</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* ----- RESET & GENERAL ----- */
         * {box-sizing: border-box; margin: 0; padding: 0;}
         body {font-family: 'Segoe UI', Arial, sans-serif; background: #f5f7fa; color: #333;}
         a {text-decoration: none; color: inherit;}
 
-        /* ----- NAVBAR ----- */
         nav {
             width: 100%;
             background-color: #0d3b66;
@@ -28,7 +26,6 @@
         nav ul li a {color: white; font-size: 16px; padding: 6px 10px; transition: 0.3s;}
         nav ul li a:hover {background: rgba(255,255,255,0.2); border-radius: 5px;}
 
-        /* ----- HEADER BANNER ----- */
         header {
             text-align: center;
             padding: 50px 20px 20px 20px;
@@ -39,7 +36,6 @@
         header h1 {font-size: 42px; margin-bottom: 10px;}
         header p {font-size: 20px;}
 
-        /* ----- CARD SECTIONS ----- */
         .card-container {
             display: flex;
             flex-wrap: wrap;
@@ -61,7 +57,6 @@
         .card h3 {color: #0d3b66; margin-bottom: 10px;}
         .card p {font-size: 16px; line-height: 1.6; color: #555;}
 
-        /* ----- FOOTER ----- */
         footer {
             background: #0d3b66;
             color: white;
@@ -71,14 +66,14 @@
             margin-top: 40px;
         }
 
-        /* ----- RESPONSIVE ----- */
-        @media(max-width:768px){.card-container{flex-direction:column;align-items:center;}}
+        @media(max-width:768px){
+            .card-container{flex-direction:column;align-items:center;}
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
     <nav>
         <div class="logo">Dengue Prediction</div>
         <ul>
@@ -88,55 +83,51 @@
         </ul>
     </nav>
 
-    <!-- HEADER BANNER -->
     <header>
         <h1>Dengue Prevention Tips</h1>
         <p>Follow these measures to protect yourself and your community from dengue fever.</p>
     </header>
 
-    <!-- TIPS CARDS -->
     <div class="card-container">
 
         <div class="card">
             <img src="https://img.icons8.com/color/96/000000/water.png" alt="Water Icon">
             <h3>Eliminate Stagnant Water</h3>
-            <p>Remove or regularly clean containers that hold water to prevent mosquito breeding, such as flower pots, buckets, and tires.</p>
+            <p>Remove or clean containers that hold water to prevent mosquito breeding.</p>
         </div>
 
         <div class="card">
-          st.image("https://m.media-amazon.com/images/I/61gPfU0C-NL.jpg", caption="Mosquito Net Icon", width=200)
-
-
+            <img src="https://m.media-amazon.com/images/I/61gPfU0C-NL.jpg" alt="Mosquito Repellent Icon" style="width: 60px;">
             <h3>Use Mosquito Repellents</h3>
-            <p>Apply approved mosquito repellents on exposed skin, especially during early morning and evening hours when mosquitoes are active.</p>
+            <p>Apply repellents on exposed skin, especially during mosquito-active hours.</p>
         </div>
 
         <div class="card">
+            <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/external-mosquito-net-baby-care-flatart-icons-outline-flatarticons.png" alt="Mosquito Net Icon">
             <h3>Use Mosquito Nets</h3>
-            <p>Sleep under mosquito nets and cover windows and doors with screens to prevent mosquito entry indoors.</p>
+            <p>Sleep under mosquito nets and install screens on windows and doors.</p>
         </div>
 
         <div class="card">
             <img src="https://img.icons8.com/color/96/000000/broom.png" alt="Clean Icon">
             <h3>Keep Surroundings Clean</h3>
-            <p>Maintain cleanliness in and around your home, clearing debris and garbage where mosquitoes can hide and breed.</p>
+            <p>Clear garbage and debris where mosquitoes can hide.</p>
         </div>
 
         <div class="card">
             <img src="https://img.icons8.com/color/96/000000/medical-history.png" alt="Medical Icon">
-            <h3>Seek Early Medical Attention</h3>
-            <p>If you experience dengue symptoms like high fever, headache, joint pain, or rashes, consult a doctor immediately.</p>
+            <h3>Seek Medical Attention</h3>
+            <p>If symptoms appear, consult a doctor immediately.</p>
         </div>
 
         <div class="card">
             <img src="https://img.icons8.com/color/96/000000/community.png" alt="Community Icon">
             <h3>Community Awareness</h3>
-            <p>Participate in local dengue control programs and educate neighbors about preventive measures to reduce dengue spread.</p>
+            <p>Educate others and support local dengue control initiatives.</p>
         </div>
 
     </div>
 
-    <!-- FOOTER -->
     <footer>
         © 2025 Mamatha | Official Dengue Prevention Awareness
     </footer>
