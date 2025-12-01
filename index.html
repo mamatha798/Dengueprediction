@@ -51,4 +51,143 @@
             transition: 0.3s;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
-        .predict-button {background: linear-gradient(45deg,#007
+        .predict-button {background: linear-gradient(45deg,#007bff,#0056b3); color: white; font-size: 20px;}
+        .predict-button:hover {transform: translateY(-3px); background: linear-gradient(45deg,#0056b3,#003d80);}
+        .info-btn {background-color: #1e7e34; color: white; font-size: 16px;}
+        .info-btn:hover {background-color: #166428; transform: translateY(-2px);}
+
+        /* ----- CARD SECTIONS ----- */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            margin: 30px 10px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            width: 280px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .card:hover {transform: translateY(-5px); box-shadow: 0 6px 18px rgba(0,0,0,0.2);}
+        .card img {width: 60px; margin-bottom: 15px;}
+        .card h3 {color: #0d3b66; margin-bottom: 10px;}
+        .card p {font-size: 16px; line-height: 1.5; color: #555;}
+
+        /* ----- ABOUT & REFERENCES SECTIONS ----- */
+        .info-section {
+            background: white;
+            max-width: 800px;
+            width: 90%;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 40px auto;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+            border-top: 4px solid #007bff;
+        }
+        .info-section h2 {color: #0d3b66; text-align: center; margin-bottom: 15px; font-size: 28px;}
+        .info-section p {font-size: 18px; line-height: 1.6; margin-bottom: 12px;}
+        .info-section ul {list-style: disc inside; margin-top: 10px;}
+        .info-section ul li {margin-bottom: 8px; font-size: 16px; color: #555;}
+
+        /* ----- FOOTER ----- */
+        footer {
+            background: #0d3b66;
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 16px;
+            margin-top: 40px;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media(max-width:768px){
+            .card-container{flex-direction:column;align-items:center;}
+            .predict-button,.info-btn{width:90%;}
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">Dengue Prediction</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="information.html">Information</a></li>
+            <li><a href="tips.html">Prevention Tips</a></li>
+            <li><a href="#references">References</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADER BANNER -->
+    <header>
+        <h1>Dengue Prediction Website</h1>
+        <p>Predict dengue outbreaks, stay informed, and protect your community.</p>
+    </header>
+
+    <!-- MAIN BUTTONS -->
+    <div class="main-btn">
+        <button class="predict-button" id="predictBtn">Predict Dengue</button>
+        <button class="info-btn" onclick="window.location.href='information.html'">More Info</button>
+        <button class="info-btn" onclick="window.location.href='tips.html'">Prevention Tips</button>
+    </div>
+
+    <!-- CARDS: FEATURES / OPTIONS -->
+    <div class="card-container">
+        <div class="card">
+            <img src="https://img.icons8.com/color/96/000000/mosquito.png" alt="Prediction Icon">
+            <h3>Dengue Prediction</h3>
+            <p>Get real-time predictions for dengue risk levels in your area using our ML-powered app.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/color/96/000000/info--v1.png" alt="Information Icon">
+            <h3>Information</h3>
+            <p>Learn about dengue, its symptoms, causes, and how to protect yourself and your family.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/fluency/96/repellent-spray.png" alt="Prevention Icon">
+            <h3>Prevention Tips</h3>
+            <p>Follow practical tips to prevent dengue including mosquito control and hygiene measures.</p>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div id="about" class="info-section">
+        <h2>About the App</h2>
+        <p><strong>Purpose:</strong> The Dengue Prediction App uses data science and machine learning to forecast dengue outbreak levels, aiding early prevention efforts.</p>
+        <p><strong>Technology Used:</strong> Python, Machine Learning Models, and Streamlit framework for user interface.</p>
+        <p><strong>Created By:</strong> Mamatha</p>
+    </div>
+
+    <!-- REFERENCES SECTION -->
+    <div id="references" class="info-section">
+        <h2>References</h2>
+        <ul>
+            <li><a href="https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue" target="_blank">WHO: Dengue and Severe Dengue</a></li>
+            <li><a href="https://www.cdc.gov/dengue/index.html" target="_blank">CDC: Dengue</a></li>
+            <li><a href="platelate.html" target="_blank">Local Data & Resources</a></li>
+            <li>Research papers and guidelines from local health departments.</li>
+        </ul>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 Mamatha | Designed for Official Dengue Awareness
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // ==== Predict Dengue button points to deployed Streamlit app ====
+        document.getElementById('predictBtn').addEventListener('click', () => {
+            window.open('https://dengue-ml-app-chiclm22snpuvd7pypxazs.streamlit.app', '_blank');
+        });
+    </script>
+
+</body>
+</html>
