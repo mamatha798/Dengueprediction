@@ -78,7 +78,7 @@
         .card h3 {color: #0d3b66; margin-bottom: 10px;}
         .card p {font-size: 16px; line-height: 1.5; color: #555;}
 
-        /* ----- ABOUT SECTION ----- */
+        /* ----- INFO SECTIONS ----- */
         .info-section {
             background: white;
             max-width: 800px;
@@ -92,6 +92,20 @@
         .info-section h2 {color: #0d3b66; text-align: center; margin-bottom: 15px; font-size: 28px;}
         .info-section p {font-size: 18px; line-height: 1.6; margin-bottom: 12px;}
 
+        /* ----- PLATELET TABLE ----- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th, table td {
+            border: 1px solid #ffcccc;
+            padding: 12px;
+            text-align: center;
+            font-size: 16px;
+        }
+        table th {background: #ffe6e6;}
+
         /* ----- FOOTER ----- */
         footer {
             background: #0d3b66;
@@ -103,7 +117,10 @@
         }
 
         /* ----- RESPONSIVE ----- */
-        @media(max-width:768px){.card-container{flex-direction:column;align-items:center;} .predict-button,.info-btn{width:90%;}}
+        @media(max-width:768px){
+            .card-container{flex-direction:column;align-items:center;}
+            .predict-button,.info-btn{width:90%;}
+        }
     </style>
 </head>
 
@@ -132,7 +149,7 @@
         <button class="info-btn" onclick="window.location.href='tips.html'">Prevention Tips</button>
     </div>
 
-    <!-- CARDS: FEATURES / OPTIONS -->
+    <!-- CARDS -->
     <div class="card-container">
         <div class="card">
             <img src="https://img.icons8.com/color/96/000000/mosquito.png" alt="Prediction Icon">
@@ -145,7 +162,6 @@
             <p>Learn about dengue, its symptoms, causes, and how to protect yourself and your family.</p>
         </div>
         <div class="card">
-            <!-- FIXED ICON -->
             <img src="https://img.icons8.com/fluency/96/repellent-spray.png" alt="Prevention Icon">
             <h3>Prevention Tips</h3>
             <p>Follow practical tips to prevent dengue including mosquito control and hygiene measures.</p>
@@ -160,14 +176,56 @@
         <p><strong>Created By:</strong> Mamatha</p>
     </div>
 
+    <!-- ⭐ PLATELET COUNT SECTION INSERTED HERE -->
+    <div class="info-section">
+        <h2>🩸 Platelet Count & Dengue Risk</h2>
+        <p>Platelets help your blood clot. During dengue infection, platelets can drop quickly, increasing the risk of internal bleeding. Monitoring platelet levels is important for early detection.</p>
+
+        <table>
+            <tr>
+                <th>Platelet Count (per µL)</th>
+                <th>Meaning</th>
+                <th>Risk Level</th>
+            </tr>
+            <tr>
+                <td>150,000 – 450,000</td>
+                <td>Normal</td>
+                <td style="color:green;font-weight:bold;">Low</td>
+            </tr>
+            <tr>
+                <td>100,000 – 150,000</td>
+                <td>Mild Drop</td>
+                <td style="color:#e6b800;font-weight:bold;">Mild Risk</td>
+            </tr>
+            <tr>
+                <td>50,000 – 100,000</td>
+                <td>Significant Drop</td>
+                <td style="color:#ff8000;font-weight:bold;">Moderate Risk</td>
+            </tr>
+            <tr>
+                <td>Below 50,000</td>
+                <td>Danger Level</td>
+                <td style="color:#d50000;font-weight:bold;">High Risk</td>
+            </tr>
+            <tr>
+                <td>Below 20,000</td>
+                <td>Critical – Emergency</td>
+                <td style="color:#b00000;font-weight:bold;">Critical</td>
+            </tr>
+        </table>
+
+        <p style="margin-top:15px;">
+            <strong>Note:</strong> Sudden platelet drop + high fever + vomiting + bleeding gums may indicate severe dengue. Seek medical care immediately.
+        </p>
+    </div>
+
     <!-- FOOTER -->
     <footer>
         © 2025 Mamatha | Designed for Official Dengue Awareness
     </footer>
 
-    <!-- JAVASCRIPT -->
+    <!-- JS -->
     <script>
-        // ==== FIXED: Predict Dengue button points to deployed Streamlit app ====
         document.getElementById('predictBtn').addEventListener('click', () => {
             window.open('https://dengue-ml-app-chiclm22snpuvd7pypxazs.streamlit.app', '_blank');
         });
