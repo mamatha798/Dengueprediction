@@ -2,214 +2,121 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dengue Prediction Website</title>
+    <title>Platelet Count & Dengue Risk</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <style>
-        /* ----- RESET & GENERAL ----- */
-        * {box-sizing: border-box; margin: 0; padding: 0;}
-        body {font-family: 'Segoe UI', Arial, sans-serif; background: #f5f7fa; color: #333;}
-        a {text-decoration: none; color: inherit;}
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Segoe UI',sans-serif;background:#f5f7fa;color:#333;}
 
         /* ----- NAVBAR ----- */
-        nav {
-            width: 100%;
-            background-color: #0d3b66;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        nav{
+            width:100%;
+            background:#0d3b66;
+            padding:15px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            box-shadow:0 3px 6px rgba(0,0,0,0.25);
         }
-        nav .logo {color: white; font-size: 24px; font-weight: bold;}
-        nav ul {list-style: none; display: flex; gap: 25px;}
-        nav ul li a {color: white; font-size: 16px; padding: 6px 10px; transition: 0.3s;}
-        nav ul li a:hover {background: rgba(255,255,255,0.2); border-radius: 5px;}
+        nav .logo{color:#fff;font-size:26px;font-weight:700;}
+        nav ul{display:flex;gap:25px;list-style:none;}
+        nav ul li a{color:#fff;font-size:16px;padding:6px 12px;border-radius:6px;transition:0.3s;text-decoration:none;}
+        nav ul li a:hover{background:rgba(255,255,255,0.2);}
 
-        /* ----- HEADER BANNER ----- */
-        header {
-            text-align: center;
-            padding: 50px 20px 20px 20px;
-            background: linear-gradient(135deg, #0d3b66, #1e5799);
-            color: white;
-            width: 100%;
-        }
-        header h1 {font-size: 42px; margin-bottom: 10px;}
-        header p {font-size: 20px;}
+        /* ----- HEADER ----- */
+        header{text-align:center;padding:40px 20px;background:linear-gradient(135deg,#0d3b66,#1e5799);color:white;}
+        header h1{font-size:38px;margin-bottom:10px;}
+        header p{font-size:18px;opacity:0.9;}
 
-        /* ----- MAIN BUTTONS ----- */
-        .main-btn {margin: 30px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;}
-        .predict-button, .info-btn {
-            padding: 16px 36px;
-            font-weight: bold;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-        .predict-button {background: linear-gradient(45deg,#007bff,#0056b3); color: white; font-size: 20px;}
-        .predict-button:hover {transform: translateY(-3px); background: linear-gradient(45deg,#0056b3,#003d80);}
-        .info-btn {background-color: #1e7e34; color: white; font-size: 16px;}
-        .info-btn:hover {background-color: #166428; transform: translateY(-2px);}
+        /* ----- CONTENT ----- */
+        .content{max-width:900px;margin:30px auto;padding:30px;background:#fff;border-radius:14px;box-shadow:0 4px 18px rgba(0,0,0,0.12);}
+        h2{color:#b30000;text-align:center;margin-bottom:20px;}
+        p{font-size:17px;line-height:1.6;margin-bottom:12px;}
 
-        /* ----- CARD SECTIONS ----- */
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-            justify-content: center;
-            margin: 30px 10px;
-        }
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            width: 280px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .card:hover {transform: translateY(-5px); box-shadow: 0 6px 18px rgba(0,0,0,0.2);}
-        .card img {width: 60px; margin-bottom: 15px;}
-        .card h3 {color: #0d3b66; margin-bottom: 10px;}
-        .card p {font-size: 16px; line-height: 1.5; color: #555;}
+        table{width:100%;border-collapse:collapse;margin-top:20px;}
+        th, td{border:1px solid #ffd4d4;padding:12px;text-align:center;font-size:16px;}
+        th{background:#ffecec;}
 
-        /* ----- ABOUT SECTION ----- */
-        .info-section {
-            background: white;
-            max-width: 800px;
-            width: 90%;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 40px auto;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.12);
-            border-top: 4px solid #007bff;
-        }
-        .info-section h2 {color: #0d3b66; text-align: center; margin-bottom: 15px; font-size: 28px;}
-        .info-section p {font-size: 18px; line-height: 1.6; margin-bottom: 12px;}
-        .info-section ul {list-style: disc inside; margin-top: 10px;}
-        .info-section ul li {margin-bottom: 8px; font-size: 16px; color: #555;}
-
-        /* ----- REFERENCES SECTION ----- */
-        .references-section {
-            background: #fff;
-            max-width: 800px;
-            width: 90%;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 40px auto;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.12);
-            border-top: 4px solid #1e7e34;
-        }
-        .references-section h2 {color: #1e7e34; text-align: center; margin-bottom: 15px; font-size: 26px;}
-        .references-section ul {list-style: none; padding-left: 0;}
-        .references-section ul li {margin-bottom: 10px; font-size: 16px;}
-        .references-section ul li a {color: #007bff; text-decoration: none;}
-        .references-section ul li a:hover {text-decoration: underline;}
+        /* ----- BUTTON ----- */
+        .btn{display:inline-block;padding:14px 28px;margin:20px 0;background:#b30000;color:white;text-decoration:none;border-radius:8px;font-weight:bold;text-align:center;}
+        .btn:hover{background:#7a0000;}
 
         /* ----- FOOTER ----- */
-        footer {
-            background: #0d3b66;
-            color: white;
-            text-align: center;
-            padding: 25px 20px;
-            font-size: 16px;
-            margin-top: 40px;
-        }
+        footer{background:#0d3b66;color:white;text-align:center;padding:25px;font-size:16px;margin-top:40px;}
 
         /* ----- RESPONSIVE ----- */
         @media(max-width:768px){
-            .card-container{flex-direction:column;align-items:center;}
-            .predict-button,.info-btn{width:90%;}
+            .content{padding:20px;}
         }
     </style>
 </head>
-
 <body>
 
     <!-- NAVBAR -->
     <nav>
         <div class="logo">Dengue Prediction</div>
         <ul>
-            <li><a href="#about">About</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="information.html">Information</a></li>
             <li><a href="tips.html">Prevention Tips</a></li>
             <li><a href="platelet.html">Platelet Count</a></li>
         </ul>
     </nav>
 
-    <!-- HEADER BANNER -->
+    <!-- HEADER -->
     <header>
-        <h1>Dengue Prediction Website</h1>
-        <p>Predict dengue outbreaks, stay informed, and protect your community.</p>
+        <h1>🩸 Platelet Count & Dengue Risk</h1>
+        <p>Understand how platelet levels impact dengue severity and risk levels.</p>
     </header>
 
-    <!-- MAIN BUTTONS -->
-    <div class="main-btn">
-        <button class="predict-button" id="predictBtn">Predict Dengue</button>
-        <button class="info-btn" onclick="window.location.href='information.html'">More Info</button>
-        <button class="info-btn" onclick="window.location.href='tips.html'">Prevention Tips</button>
-        <button class="info-btn" onclick="window.location.href='platelet.html'">Platelet Info</button>
-    </div>
+    <!-- MAIN CONTENT -->
+    <div class="content">
+        <h2>Platelet Count Guide</h2>
+        <p>Platelets are blood cells that help your blood clot. During dengue infection, platelet levels can drop rapidly, increasing the risk of severe bleeding. Monitoring platelet counts regularly is crucial for early detection.</p>
 
-    <!-- CARDS: FEATURES / OPTIONS -->
-    <div class="card-container">
-        <div class="card">
-            <img src="https://img.icons8.com/color/96/000000/mosquito.png" alt="Prediction Icon">
-            <h3>Dengue Prediction</h3>
-            <p>Get real-time predictions for dengue risk levels in your area using our ML-powered app.</p>
-        </div>
-        <div class="card">
-            <img src="https://img.icons8.com/color/96/000000/info--v1.png" alt="Information Icon">
-            <h3>Information</h3>
-            <p>Learn about dengue, its symptoms, causes, and how to protect yourself and your family.</p>
-        </div>
-        <div class="card">
-            <img src="https://img.icons8.com/fluency/96/repellent-spray.png" alt="Prevention Icon">
-            <h3>Prevention Tips</h3>
-            <p>Follow practical tips to prevent dengue including mosquito control and hygiene measures.</p>
-        </div>
-        <div class="card">
-            <img src="https://img.icons8.com/color/96/000000/blood-test.png" alt="Platelet Icon">
-            <h3>Platelet Count</h3>
-            <p>Check how platelet levels affect dengue severity and understand risk categories.</p>
-        </div>
-    </div>
+        <table>
+            <tr>
+                <th>Platelet Count (per µL)</th>
+                <th>Status</th>
+                <th>Risk Level</th>
+            </tr>
+            <tr>
+                <td>150,000 – 450,000</td>
+                <td>Normal</td>
+                <td style="color:green;font-weight:bold;">Low</td>
+            </tr>
+            <tr>
+                <td>100,000 – 150,000</td>
+                <td>Mild Drop</td>
+                <td style="color:#e6b800;font-weight:bold;">Mild Risk</td>
+            </tr>
+            <tr>
+                <td>50,000 – 100,000</td>
+                <td>Significant Drop</td>
+                <td style="color:#ff8000;font-weight:bold;">Moderate Risk</td>
+            </tr>
+            <tr>
+                <td>Below 50,000</td>
+                <td>Danger Level</td>
+                <td style="color:#d50000;font-weight:bold;">High Risk</td>
+            </tr>
+            <tr>
+                <td>Below 20,000</td>
+                <td>Critical – Emergency</td>
+                <td style="color:#8b0000;font-weight:bold;">Critical</td>
+            </tr>
+        </table>
 
-    <!-- ABOUT SECTION -->
-    <div id="about" class="info-section">
-        <h2>About the App</h2>
-        <p><strong>Purpose:</strong> The Dengue Prediction App uses data science and machine learning to forecast dengue outbreak levels, aiding early prevention efforts.</p>
-        <p><strong>Technology Used:</strong> Python, Machine Learning Models, and Streamlit framework for user interface.</p>
-        <p><strong>Created By:</strong> Mamatha</p>
-    </div>
+        <p style="margin-top:15px;"><strong>Warning:</strong> Sudden platelet drop accompanied by high fever, vomiting, or bleeding symptoms may indicate severe dengue. Seek immediate medical attention.</p>
 
-    <!-- REFERENCES SECTION -->
-    <div class="references-section">
-        <h2>References</h2>
-        <ul>
-            <li><a href="https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue" target="_blank">World Health Organization - Dengue Facts</a></li>
-            <li><a href="https://www.cdc.gov/dengue/" target="_blank">CDC - Dengue Information</a></li>
-            <li><a href="platelet.html">Platelet Count Guide</a></li>
-        </ul>
+        <a href="index.html" class="btn">⬅ Back to Home</a>
     </div>
 
     <!-- FOOTER -->
     <footer>
         © 2025 Mamatha | Designed for Official Dengue Awareness
     </footer>
-
-    <!-- JAVASCRIPT -->
-    <script>
-        // Predict Dengue button points to deployed Streamlit app
-        document.getElementById('predictBtn').addEventListener('click', () => {
-            window.open('https://dengue-ml-app-chiclm22snpuvd7pypxazs.streamlit.app', '_blank');
-        });
-    </script>
 
 </body>
 </html>
