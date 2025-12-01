@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Platelet Count & Dengue Risk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Segoe UI',sans-serif;background:#f5f7fa;color:#333;}
+
+        nav{
+            width:100%;
+            background:#0d3b66;
+            padding:15px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            box-shadow:0 3px 6px rgba(0,0,0,0.25);
+        }
+        nav .logo{color:#fff;font-size:26px;font-weight:700;}
+        nav ul{display:flex;gap:25px;list-style:none;}
+        nav ul li a{color:#fff;font-size:16px;padding:6px 12px;border-radius:6px;transition:0.3s;text-decoration:none;}
+        nav ul li a:hover{background:rgba(255,255,255,0.2);}
+
+        header{text-align:center;padding:40px 20px;background:linear-gradient(135deg,#0d3b66,#1e5799);color:white;}
+        header h1{font-size:38px;margin-bottom:10px;}
+        header p{font-size:18px;opacity:0.9;}
+
+        .content{max-width:900px;margin:30px auto;padding:30px;background:#fff;border-radius:14px;box-shadow:0 4px 18px rgba(0,0,0,0.12);}
+        h2{color:#b30000;text-align:center;margin-bottom:20px;}
+        p{font-size:17px;line-height:1.6;margin-bottom:12px;}
+
+        table{width:100%;border-collapse:collapse;margin-top:20px;}
+        th, td{border:1px solid #ffd4d4;padding:12px;text-align:center;font-size:16px;}
+        th{background:#ffecec;}
+
+        footer{background:#0d3b66;color:white;text-align:center;padding:25px;font-size:16px;margin-top:40px;}
+        .btn{display:inline-block;padding:14px 28px;margin:20px 0;background:#b30000;color:white;text-decoration:none;border-radius:8px;font-weight:bold;text-align:center;}
+        .btn:hover{background:#7a0000;}
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">Dengue Prediction</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="information.html">Information</a></li>
+            <li><a href="tips.html">Prevention Tips</a></li>
+            <li><a href="platelet.html">Platelet Count</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+        <h1>🩸 Platelet Count & Dengue Risk</h1>
+        <p>Learn how platelet levels affect dengue severity and risk levels.</p>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+        <h2>Platelet Count Guide</h2>
+        <p>Platelets are blood cells that help your blood clot. During dengue infection, platelet levels can drop rapidly, increasing the risk of severe bleeding. Monitoring platelet counts regularly is crucial for early detection.</p>
+
+        <table>
+            <tr>
+                <th>Platelet Count (per µL)</th>
+                <th>Status</th>
+                <th>Risk Level</th>
+            </tr>
+            <tr>
+                <td>150,000 – 450,000</td>
+                <td>Normal</td>
+                <td style="color:green;font-weight:bold;">Low</td>
+            </tr>
+            <tr>
+                <td>100,000 – 150,000</td>
+                <td>Mild Drop</td>
+                <td style="color:#e6b800;font-weight:bold;">Mild Risk</td>
+            </tr>
+            <tr>
+                <td>50,000 – 100,000</td>
+                <td>Significant Drop</td>
+                <td style="color:#ff8000;font-weight:bold;">Moderate Risk</td>
+            </tr>
+            <tr>
+                <td>Below 50,000</td>
+                <td>Danger Level</td>
+                <td style="color:#d50000;font-weight:bold;">High Risk</td>
+            </tr>
+            <tr>
+                <td>Below 20,000</td>
+                <td>Critical – Emergency</td>
+                <td style="color:#8b0000;font-weight:bold;">Critical</td>
+            </tr>
+        </table>
+
+        <p style="margin-top:15px;"><strong>Warning:</strong> Sudden platelet drop accompanied by high fever, vomiting, or bleeding symptoms may indicate severe dengue. Seek immediate medical attention.</p>
+
+        <a href="index.html" class="btn">⬅ Back to Home</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 Mamatha | Designed for Official Dengue Awareness
+    </footer>
+
+</body>
+</html>
