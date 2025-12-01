@@ -91,6 +91,25 @@
         }
         .info-section h2 {color: #0d3b66; text-align: center; margin-bottom: 15px; font-size: 28px;}
         .info-section p {font-size: 18px; line-height: 1.6; margin-bottom: 12px;}
+        .info-section ul {list-style: disc inside; margin-top: 10px;}
+        .info-section ul li {margin-bottom: 8px; font-size: 16px; color: #555;}
+
+        /* ----- REFERENCES SECTION ----- */
+        .references-section {
+            background: #fff;
+            max-width: 800px;
+            width: 90%;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 40px auto;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+            border-top: 4px solid #1e7e34;
+        }
+        .references-section h2 {color: #1e7e34; text-align: center; margin-bottom: 15px; font-size: 26px;}
+        .references-section ul {list-style: none; padding-left: 0;}
+        .references-section ul li {margin-bottom: 10px; font-size: 16px;}
+        .references-section ul li a {color: #007bff; text-decoration: none;}
+        .references-section ul li a:hover {text-decoration: underline;}
 
         /* ----- FOOTER ----- */
         footer {
@@ -119,6 +138,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="information.html">Information</a></li>
             <li><a href="tips.html">Prevention Tips</a></li>
+            <li><a href="platelet.html">Platelet Count</a></li>
         </ul>
     </nav>
 
@@ -133,6 +153,7 @@
         <button class="predict-button" id="predictBtn">Predict Dengue</button>
         <button class="info-btn" onclick="window.location.href='information.html'">More Info</button>
         <button class="info-btn" onclick="window.location.href='tips.html'">Prevention Tips</button>
+        <button class="info-btn" onclick="window.location.href='platelet.html'">Platelet Info</button>
     </div>
 
     <!-- CARDS: FEATURES / OPTIONS -->
@@ -152,6 +173,11 @@
             <h3>Prevention Tips</h3>
             <p>Follow practical tips to prevent dengue including mosquito control and hygiene measures.</p>
         </div>
+        <div class="card">
+            <img src="https://img.icons8.com/color/96/000000/blood-test.png" alt="Platelet Icon">
+            <h3>Platelet Count</h3>
+            <p>Check how platelet levels affect dengue severity and understand risk categories.</p>
+        </div>
     </div>
 
     <!-- ABOUT SECTION -->
@@ -162,6 +188,16 @@
         <p><strong>Created By:</strong> Mamatha</p>
     </div>
 
+    <!-- REFERENCES SECTION -->
+    <div class="references-section">
+        <h2>References</h2>
+        <ul>
+            <li><a href="https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue" target="_blank">World Health Organization - Dengue Facts</a></li>
+            <li><a href="https://www.cdc.gov/dengue/" target="_blank">CDC - Dengue Information</a></li>
+            <li><a href="platelet.html">Platelet Count Guide</a></li>
+        </ul>
+    </div>
+
     <!-- FOOTER -->
     <footer>
         © 2025 Mamatha | Designed for Official Dengue Awareness
@@ -169,7 +205,7 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        // ==== Predict Dengue button points to deployed Streamlit app ====
+        // Predict Dengue button points to deployed Streamlit app
         document.getElementById('predictBtn').addEventListener('click', () => {
             window.open('https://dengue-ml-app-chiclm22snpuvd7pypxazs.streamlit.app', '_blank');
         });
@@ -177,6 +213,3 @@
 
 </body>
 </html>
-
-
-
